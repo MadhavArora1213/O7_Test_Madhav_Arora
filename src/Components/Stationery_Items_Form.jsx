@@ -7,6 +7,7 @@
 // ○ Otherwise no discount
 // Deliverable:
 // ● Display Product, Quantity, Unit Price, Subtotal, Discount, Total
+// Good Ui/UX with Tailwind CSS
 
 import React, { useState, useEffect } from 'react';
 
@@ -36,7 +37,7 @@ function StationeryItemsForm() {
     }
     , [unitPrice, quantity]);
     return (
-        <div className="max-w-md mx-auto p-4 border rounded shadow">
+        <div className="max-w-md mx-auto p-4 border rounded shadow mt-10 mb-10">
             <h2 className="text-2xl font-bold mb-4">Stationery Items Order Form</h2>
             <div className="mb-4">
                 <label className="block mb-2">Product:</label>
@@ -97,6 +98,10 @@ function StationeryItemsForm() {
                     className="w-full p-2 border rounded"
                 />
             </div>
+            {/* // Add a submit button (non-functional for now) */}
+            <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500">
+                Place Order
+            </button>
         </div>
     );
 }

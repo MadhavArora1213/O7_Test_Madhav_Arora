@@ -11,7 +11,7 @@ function Header() {
                         </div>
                         <div className='pr-20 flex justify-between items-center w-[25vw]'>
                            <a href="order">Stationery Items</a>
-                           <a href="#">Printing Items</a>
+                           <a href="printing">Printing Items</a>
                         </div>
                     </div>
                 </header>

@@ -3,6 +3,7 @@ import Header from './Components/Header.jsx'
 import Footer from './Components/Footer.jsx'
 import Homepage from './Components/Homepage.jsx'
 import StationeryItemsForm from './Components/Stationery_Items_Form.jsx'
+import PrintingServicesForm from './Components/Printing_Services_Form.jsx'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 //setup router
 function App() {
@@ -15,6 +16,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/order" element={<StationeryItemsForm />} />
+      </Routes>
+      <Routes>
+        <Route path="/printing" element={<PrintingServicesForm />} />
       </Routes>
       <Footer />
     </Router>
