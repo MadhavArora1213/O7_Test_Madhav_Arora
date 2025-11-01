@@ -9,7 +9,7 @@ function Footer() {
                         <div className=''>
                             <h1 className="text-3xl font-bold">Mini Order App</h1>
                         </div>
-                        <div className='pr-20 flex justify-between items-center w-[70vw]'>
+                        <div className=' flex justify-between items-center w-[70vw]'>
                             <a href="#">About Us</a>
                             <a href="#">Contact Us</a>
                             <a href="#">Privacy Policy</a>
