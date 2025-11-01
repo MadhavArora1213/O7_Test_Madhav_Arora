@@ -10,7 +10,7 @@ function Header() {
                             <h1 className="text-3xl font-bold">Mini Order App</h1>
                         </div>
                         <div className='pr-20 flex justify-between items-center w-[25vw]'>
-                           <a href="#">Stationery Items</a>
+                           <a href="order">Stationery Items</a>
                            <a href="#">Printing Items</a>
                         </div>
                     </div>
