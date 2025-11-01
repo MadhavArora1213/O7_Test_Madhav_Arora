@@ -9,6 +9,7 @@
 // ● Display Product, Quantity, Unit Price, Subtotal, Discount, Total
 // Good Ui/UX with Tailwind CSS
 
+//place order that for now go to combined calculation and tax page
 import React, { useState, useEffect } from 'react';
 
 const products = {
@@ -99,7 +100,8 @@ function StationeryItemsForm() {
                 />
             </div>
             {/* // Add a submit button (non-functional for now) */}
-            <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500">
+
+          <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500">
                 Place Order
             </button>
         </div>
