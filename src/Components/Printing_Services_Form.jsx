@@ -9,7 +9,10 @@
 // With good UI/UX using Tailwind CSS
 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 function PrintingServicesForm() {
+    const navigate = useNavigate();
     const [pages, setPages] = useState(1);
     const [printType, setPrintType] = useState('Black & White');
     const [isUrgent, setIsUrgent] = useState(false);
@@ -76,8 +79,15 @@ function PrintingServicesForm() {
                 <p>Total: ₹{total}</p>
             </div>
             {/* Submit Button */}
+
             <div className="mb-4">
-                <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500">Place Order</button>
+                <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500" onClick={() => {
+                    const stationeryTotal = 0;
+                    // navigate as SPA and pass totals via query params
+                    navigate(`/combined?stationeryTotal=${encodeURIComponent(stationeryTotal)}&printingTotal=${encodeURIComponent(total)}`);
+                }}>
+                    Place Order
+                </button>
             </div>
         </div>
     );

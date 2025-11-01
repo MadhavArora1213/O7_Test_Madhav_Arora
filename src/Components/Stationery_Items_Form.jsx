@@ -8,17 +8,19 @@
 // Deliverable:
 // ● Display Product, Quantity, Unit Price, Subtotal, Discount, Total
 // Good Ui/UX with Tailwind CSS
-
+//onclick on the button it should calculate the total and save in variable and then redirect to combined calculation and tax page  and then that page combined calculation and tax page use that value
 //place order that for now go to combined calculation and tax page
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 const products = {
     Pen: 10,
     Notebook: 50,
     Stapler: 120,
     Marker: 30
-};  
+};
+//Make props stationeryTotal and printingTotal to pass value to combined calculation and tax page
 function StationeryItemsForm() {
+    const navigate = useNavigate();
     const [product, setProduct] = useState('Pen');
     const [quantity, setQuantity] = useState(1);
     const [unitPrice, setUnitPrice] = useState(products[product]);
@@ -100,8 +102,11 @@ function StationeryItemsForm() {
                 />
             </div>
             {/* // Add a submit button (non-functional for now) */}
-
-          <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500">
+            <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500" onClick={() => {
+                const printingTotal = 0;
+                // navigate as SPA and pass totals via query params
+                navigate(`/combined?stationeryTotal=${encodeURIComponent(total)}&printingTotal=${encodeURIComponent(printingTotal)}`);
+            }}>
                 Place Order
             </button>
         </div>
@@ -109,3 +114,5 @@ function StationeryItemsForm() {
 }
 
 export default StationeryItemsForm;
+
+
