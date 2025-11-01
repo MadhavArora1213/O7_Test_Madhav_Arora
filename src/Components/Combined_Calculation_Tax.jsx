@@ -52,18 +52,33 @@ function Combined_Calculation_Tax({stationeryTotal, printingTotal}) {
                 <button
                     className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-400"
                     onClick={() => {
-                        // pass full order data to Order Summary using state
+                        // prepare order data (numbers kept as numbers)
+                        const orderID = `ORD${Date.now()}`;
+                        const customerName = "John Doe";
+                        const orderDate = new Date().toLocaleString();
                         const orderData = {
-                            customerName: "John Doe",
-                            orderDate: new Date().toLocaleString(),
-                            orderID: `ORD${Date.now()}`,
+                            customerName,
+                            orderDate,
+                            orderID,
                             stationeryTotal: stationery,
                             printingTotal: printing,
                             tax,
                             deliveryCharge,
                             grandTotal
                         };
-                        navigate('/order-summary', { state: orderData });
+                        // build query string as fallback (encode values)
+                        const qs = new URLSearchParams({
+                            orderID,
+                            customerName,
+                            orderDate,
+                            stationeryTotal: String(stationery),
+                            printingTotal: String(printing),
+                            tax: String(tax),
+                            deliveryCharge: String(deliveryCharge),
+                            grandTotal: String(grandTotal)
+                        }).toString();
+                        // navigate with both state and query params
+                        navigate(`/order-summary?${qs}`, { state: orderData });
                     }}
                 >
                     View Order Summary & Invoice
