@@ -50,7 +50,7 @@ function Combined_Calculation_Tax({stationeryTotal, printingTotal}) {
 
             <div className="mt-4">
                 <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                    className="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-400"
                     onClick={() => {
                         // pass full order data to Order Summary using state
                         const orderData = {
