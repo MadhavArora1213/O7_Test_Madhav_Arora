@@ -83,8 +83,8 @@ function PrintingServicesForm() {
             <div className="mb-4">
                 <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500" onClick={() => {
                     const stationeryTotal = 0;
-                    // navigate as SPA and pass totals via query params
-                    navigate(`/combined?stationeryTotal=${encodeURIComponent(stationeryTotal)}&printingTotal=${encodeURIComponent(total)}`);
+                    // navigate as SPA and pass numeric totals using location.state
+                    navigate('/combined', { state: { stationeryTotal: Number(stationeryTotal) || 0, printingTotal: Number(total) || 0 } });
                 }}>
                     Place Order
                 </button>

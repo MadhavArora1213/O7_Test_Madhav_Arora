@@ -104,8 +104,8 @@ function StationeryItemsForm() {
             {/* // Add a submit button (non-functional for now) */}
             <button className="w-full bg-orange-600 text-white p-2 rounded hover:bg-orange-500" onClick={() => {
                 const printingTotal = 0;
-                // navigate as SPA and pass totals via query params
-                navigate(`/combined?stationeryTotal=${encodeURIComponent(total)}&printingTotal=${encodeURIComponent(printingTotal)}`);
+                // navigate as SPA and pass numeric totals using location.state
+                navigate('/combined', { state: { stationeryTotal: Number(total) || 0, printingTotal: Number(printingTotal) || 0 } });
             }}>
                 Place Order
             </button>
